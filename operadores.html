@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+      }
+
+      .description{
+        color: gray;
+        font-style: italic;
+      }
+      .destacado{
+        color: chocolate;
+      }
+      .ejemplo01 > p {
+        color: blueviolet;
+      }
+
+      .ejemplo02 p ~ span {
+        color: red;
+      }
+
+      .ejemplo03 p + span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Operadores</h1>
+    <h2>[ article > p ]</h2>
+    <p class="description">Solo afecta a hijos directos:</p>
+    <article class="ejemplo01">
+      <p>Primer parrafo</p>
+      <footer>
+        <p>Parrafo dentro del footer</p>
+      </footer>
+      <p>Segundo parrafo</p>
+    </article>
+    <hr />
+
+    <h2>[ p ~ span ]</h2>
+    <p class="description">Afecta al <span class="destacado">span</span> que se encuentra despues de <span class="destacado">p</span>:</p>
+
+    <article class="ejemplo02">
+      <span>Esto no es rojo porque aparece antes de cualquier párrafo.</span>
+      <p>Aquí hay un párrafo</p>
+      <span
+        >Este intervalo es rojo porque aparece después
+        del párrafo, aunque hay otros nodos en el medio.</span
+      >
+      <p>Sea lo que sea, sigue sonriendo.</p>
+      <h1>Sueño grande</h1>
+      <span>
+        No importa cuántos o qué tipo de nodos haya entre ellos, todos los
+        tramos del mismo padre después de un párrafo son rojos.
+      </span>
+    </article>
+
+    <hr />
+    <h2>[ p + span ]</h2>
+    <p class="description">Afecta al <span class="destacado">span</span> que se encuentra justo despues de <span class="destacado">p</span>:</p>
+
+    <article class="ejemplo03">
+      <span>Esto no es rojo porque aparece antes de cualquier párrafo.</span>
+      <p>Aquí hay un párrafo</p>
+      <span
+        >Este intervalo es rojo porque aparece después
+        del párrafo.</span
+      >
+      <p>Sea lo que sea, sigue sonriendo.</p>
+      <h1>Sueño grande</h1>
+      <span>
+        Este intervalo no es rojo porque entre el parrafo y el span existen otros nodos.
+      </span>
+    </article>
+
+    <hr />
+    <a href="index.html">Atras</a>
+  </body>
+</html>
