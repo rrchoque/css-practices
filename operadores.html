@@ -11,7 +11,7 @@
         font-weight: 600;
       }
 
-      .description{
+      h2 + p, .description{
         color: gray;
         font-style: italic;
       }
@@ -29,12 +29,17 @@
       .ejemplo03 p + span {
         color: red;
       }
+
+      button + button{
+        margin-left: 16px;
+      }
+
     </style>
   </head>
   <body>
     <h1>Operadores</h1>
     <h2>[ article > p ]</h2>
-    <p class="description">Solo afecta a hijos directos:</p>
+    <p>Solo afecta a hijos directos:</p>
     <article class="ejemplo01">
       <p>Primer parrafo</p>
       <footer>
@@ -45,7 +50,7 @@
     <hr />
 
     <h2>[ p ~ span ]</h2>
-    <p class="description">Afecta al <span class="destacado">span</span> que se encuentra despues de <span class="destacado">p</span>:</p>
+    <p>Afecta al <span class="destacado">span</span> que se encuentra despues de <span class="destacado">p</span>:</p>
 
     <article class="ejemplo02">
       <span>Esto no es rojo porque aparece antes de cualquier párrafo.</span>
@@ -64,7 +69,7 @@
 
     <hr />
     <h2>[ p + span ]</h2>
-    <p class="description">Afecta al <span class="destacado">span</span> que se encuentra justo despues de <span class="destacado">p</span>:</p>
+    <p>Afecta al <span class="destacado">span</span> que se encuentra justo despues de <span class="destacado">p</span>:</p>
 
     <article class="ejemplo03">
       <span>Esto no es rojo porque aparece antes de cualquier párrafo.</span>
@@ -79,6 +84,15 @@
         Este intervalo no es rojo porque entre el parrafo y el span existen otros nodos.
       </span>
     </article>
+
+    <p class="description">
+      Ejemplo 2 <span class="destacado">button + button</span>:
+    </p>
+    <div>
+      <button>Uno</button>
+      <button>Dos</button>
+      <button>Tres</button>
+    </div>
 
     <hr />
     <a href="index.html">Atras</a>
