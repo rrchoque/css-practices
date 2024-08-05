@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Especificidad</title>
+
+    <style>
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Especificidad</h1>
+    <p>
+      La especificidad en CSS es una forma de determinar qué reglas CSS se
+      aplican a un elemento cuando hay múltiples reglas que podrían aplicarse.
+      La especificidad se calcula utilizando un sistema de puntos basado en el
+      tipo de selectores utilizados en una regla CSS.
+    </p>
+    <p>
+      La especificidad de una regla CSS se puede dividir en cuatro componentes
+      principales, que se cuentan y ponderan de la siguiente manera:
+    </p>
+
+    <ol>
+      <li>
+        Selectores inline (atributo style en el HTML) tienen la mayor
+        especificidad.
+      </li>
+      <li>Selectores de ID (#id) tienen una especificidad alta.</li>
+      <li>
+        Selectores de clase, pseudo-clases (:hover, :nth-child, etc.) y
+        atributos ([type="text"]) tienen una especificidad media.
+      </li>
+      <li>
+        Selectores de tipo (elementos HTML como div, p, etc.) y pseudo-elementos
+        (::before, ::after) tienen una especificidad baja.
+      </li>
+    </ol>
+
+    <h3>Ejemplos de especificidad</h3>
+
+    <strong>1. Selectores Inline</strong>
+
+    <div style="color: red">Este texto es rojo.</div>
+
+    <p>
+      El estilo inline tiene una especificidad muy alta y sobrescribirá
+      cualquier otra regla CSS.
+    </p>
+
+    <strong>2. Selectores de ID</strong>
+
+    <style>
+      #mi-id {
+        color: blue;
+      }
+    </style>
+
+    <div id="mi-id">Este texto es azul.</div>
+
+    <p>
+      El selector de ID tiene una alta especificidad y sobrescribirá las reglas
+      con clases y selectores de tipo.
+    </p>
+
+    <strong>3. Selectores de Clase</strong>
+
+    <style>
+      .mi-clase {
+        color: green;
+      }
+    </style>
+
+    <div class="mi-clase">Este texto es verde.</div>
+
+    <p>El selector de clase tiene una especificidad media.</p>
+
+    <strong>4. Selectores de Tipo</strong>
+
+    <style>
+      p {
+        color: black;
+      }
+    </style>
+
+    <p>Este texto es negro.</p>
+
+    <p>El selector de tipo tiene la especificidad más baja.</p>
+
+    <h3>Ejemplo combinado</h3>
+
+    <pre>
+        <code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="es"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8" /&gt;
+            &lt;title&gt;Ejemplo de Especificidad&lt;/title&gt;
+            &lt;style&gt;
+            p {
+                color: black; /* 1. especificidad más baja */
+            }
+            .mi-clase {
+                color: green; /* 2. especificidad media */
+            }
+            #mi-id {
+                color: blue; /* 3. especificidad alta */
+            }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;p id="mi-id" class="mi-clase"&gt;Este texto es azul.&lt;/p&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+        </code>
+    </pre>
+
+    <p>
+      En este ejemplo, el texto del párrafo será azul porque el selector de ID
+      (#mi-id) tiene la especificidad más alta, sobrescribiendo tanto al
+      selector de clase (.mi-clase) como al selector de tipo (p).
+    </p>
+
+    <h3>Especificidad acumulada</h3>
+
+    <p>
+      También es posible combinar selectores, lo que aumenta la especificidad
+      total. Por ejemplo:
+    </p>
+
+    <pre>
+        <code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="es"&gt;
+      &lt;head&gt;
+        &lt;meta charset="UTF-8" /&gt;
+        &lt;title&gt;Ejemplo de Especificidad Acumulada&lt;/title&gt;
+        &lt;style&gt;&gt;
+          div p {
+            color: red; /* 0-0-2-0 */
+          }
+          .container p {
+            color: green; /* 0-1-1-0 */
+          }
+          #container p {
+            color: blue; /* 1-0-1-0 */
+          }
+        &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;div class="container" id="container"&gt;
+          &lt;p&gt;Este texto es azul.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+        </code>
+    </pre>
+
+    <p>
+      En este caso, el texto del párrafo será azul porque el selector #container
+      p tiene la especificidad más alta.
+    </p>
+
+    <pre>
+        <code>Aquí el código que queremos mostrar</code>
+    </pre>
+
+    <hr />
+    <a href="index.html">Atras</a>
+  </body>
+</html>
