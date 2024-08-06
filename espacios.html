@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padding, border y margin</title>
+
+    <style>
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+      /* Padding */
+      .padding-ejemplo1 {
+        padding: 20px; /* Padding de 20px en todos los lados */
+        background-color: lightblue;
+      }
+      .padding-ejemplo2 {
+        padding: 10px 20px; /* Padding de 10px arriba y abajo, 20px a la izquierda y derecha */
+        background-color: lightgreen;
+      }
+      .padding-ejemplo3 {
+        padding: 5px 10px 15px 20px; /* Padding arriba, derecha, abajo, izquierda */
+        background-color: lightcoral;
+      }
+
+      /* Border */
+      .border-ejemplo1 {
+        border: 2px solid black; /* Borde sólido de 2px de grosor y color negro */
+      }
+      .border-ejemplo2 {
+        border-top: 4px dotted red; /* Borde punteado rojo de 4px solo arriba */
+        border-right: 4px dashed green; /* Borde discontinuo verde de 4px solo a la derecha */
+        border-bottom: 4px double blue; /* Borde doble azul de 4px solo abajo */
+        border-left: 4px groove purple; /* Borde en relieve púrpura de 4px solo a la izquierda */
+      }
+
+      /* Margin */
+      .margin-ejemplo1 {
+        margin: 20px; /* Margin de 20px en todos los lados */
+        background-color: lightgray;
+      }
+      .margin-ejemplo2 {
+        margin: 10px 20px; /* Margin de 10px arriba y abajo, 20px a la izquierda y derecha */
+        background-color: lightyellow;
+      }
+      .margin-ejemplo3 {
+        margin: 5px 10px 15px 20px; /* Margin arriba, derecha, abajo, izquierda */
+        background-color: lightpink;
+      }
+
+      /* Ejemplo combinado */
+      .combinado {
+            padding: 10px; /* Espacio interior de 10px */
+            border: 2px solid black; /* Borde sólido negro de 2px */
+            margin: 20px; /* Espacio exterior de 20px */
+            background-color: lightcyan;
+          }
+    </style>
+  </head>
+  <body>
+    <h1>Cómo usar padding, border y margin en CSS.</h1>
+    <hr />
+    <h2>Padding</h2>
+
+    <p>
+      El padding es el espacio interior entre el contenido de un elemento y su
+      borde. Aquí tienes algunos ejemplos:
+    </p>
+
+    <div class="padding-ejemplo1">Padding de 20px en todos los lados</div>
+    <div class="padding-ejemplo2">
+      Padding de 10px arriba y abajo, 20px a la izquierda y derecha
+    </div>
+    <div class="padding-ejemplo3">
+      Padding de 5px arriba, 10px derecha, 15px abajo, 20px izquierda
+    </div>
+
+    <h2>Border</h2>
+    <p>
+      El border es el borde alrededor de un elemento. Aquí tienes algunos
+      ejemplos:
+    </p>
+
+    <div class="border-ejemplo1">
+      Borde sólido de 2px de grosor y color negro
+    </div>
+    <div class="border-ejemplo2">Bordes diferentes en cada lado</div>
+
+    <h2>Margin</h2>
+    <p>
+      El margin es el espacio exterior entre el borde de un elemento y los
+      elementos que lo rodean. Aquí tienes algunos ejemplos:
+    </p>
+
+    <div class="margin-ejemplo1">Margin de 20px en todos los lados</div>
+    <div class="margin-ejemplo2">
+      Margin de 10px arriba y abajo, 20px a la izquierda y derecha
+    </div>
+    <div class="margin-ejemplo3">
+      Margin de 5px arriba, 10px derecha, 15px abajo, 20px izquierda
+    </div>
+
+    <h2>Ejemplo combinado de padding, border y margin </h2>
+
+        <div class="combinado">Ejemplo con padding, border y margin</div>
+
+    <p>En este último ejemplo, el div tiene un espacio interior (padding) de 10px,
+    un borde (border) sólido negro de 2px y un espacio exterior (margin) de
+    20px. Estos ejemplos te muestran cómo usar padding, border y margin para
+    controlar el espaciado y los bordes de los elementos en CSS.</p>
+    <hr />
+    <a href="index.html">Atras</a>
+  </body>
+</html>
