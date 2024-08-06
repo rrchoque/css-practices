@@ -1,41 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diplay Box en CSS</title>
     <style>
-        .box-ejemplo1{
-            width: 100px;
-            height: 100px;
-            background: aquamarine;
-            padding: 10px;
-            border: 5px solid blue;
-            margin: 15px;
-            box-sizing: content-box;
-        }
-
-        .box-ejemplo2{
-            box-sizing: border-box;
-        }
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+      .box-ejemplo1 {
+        width: 100px;
+        height: 100px;
+        background: aquamarine;
+        padding: 10px;
+        border: 5px solid blue;
+        margin: 15px;
+        box-sizing: content-box;
+      }
+      .box-ejemplo2 {
+        box-sizing: border-box;
+      }
+      .box-ejemplo3 {
+        width: 200px;
+        height: 200px;
+        background: aquamarine;
+        padding: 10px;
+        margin: 15px;
+        box-sizing: border-box;
+        font-size: 45px;
+      }
+      .box-ejemplo4 {
+        overflow: scroll;
+      }
+      .box-ejemplo5 {
+        overflow: hidden;
+      }
+      .box-ejemplo6 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Diplay Box en CSS</h1>
 
     <h2>Los espacios afectan al tamaño de la caja</h2>
-    <div class="box-ejemplo1">
-        100px * 100px
-    </div>
-    <p>El div tiene un espacio interior (padding) de 10px, un borde (border) sólido blue de 5px y un espacio exterior (margin) de 15px. Esto afecta al tamaño final del elemento, teniendo un tamaño final de 130px * 130px, esto puede hacer dificil calcular el tamaño final de nuestros elementos.</p>
+    <div class="box-ejemplo1">100px * 100px</div>
+    <p>
+      El div tiene un espacio interior (padding) de 10px, un borde (border)
+      sólido blue de 5px y un espacio exterior (margin) de 15px. Esto afecta al
+      tamaño final del elemento, teniendo un tamaño final de 130px * 130px, esto
+      puede hacer dificil calcular el tamaño final de nuestros elementos.
+    </p>
 
     <h2>Propiedad: box-sizing: border-box</h2>
-    <div class="box-ejemplo1 box-ejemplo2">
-        100px * 100px
-    </div>
-    <p>Cuando cambiamos la propiedad box-sizing de content-box (valor por defecto) a border-box, las propiedades width y height incluyen el padding y el border, permitiendonos tener un mejor control del tamaño de nuestros elementos</p>
-    
+    <div class="box-ejemplo1 box-ejemplo2">100px * 100px</div>
+    <p>
+      Cuando cambiamos la propiedad box-sizing de content-box (valor por
+      defecto) a border-box, las propiedades width y height incluyen el padding
+      y el border, permitiendonos tener un mejor control del tamaño de nuestros
+      elementos
+    </p>
+
+    <h2>Desbordamiento (Overflow)</h2>
+    <div class="box-ejemplo3">CSS IS AWESOME</div>
+    <p>Cuando utilizamos elementos con el modelo de la caja podemos llegar a tener desbordamiento del contenido, como se puede ver en el ejemplo anterior, esto se puede llegar a controlar con las siguientes opciones:</p>
+
+    <h3>overflow: scroll;</h3>
+    <div class="box-ejemplo3 box-ejemplo4">CSS IS AWESOME</div>
+    <p>Esta propiedad agrega las barras de scroll para poder ver el contenido completo, pero si quieres agregar las barras de scroll es recomendable utilizar la propiedad <strong>overflow: auto;</strong> porque de otra forma puede ser que en algunos dispositivos se agreguen las barras de scroll, incluso cuando el contenido sí cabe en la caja.</p>
+
+    <h3>overflow: hidden;</h3>
+    <div class="box-ejemplo3 box-ejemplo5">CSS IS AWESOME</div>
+    <p>Esta propiedad esconde el contenido que se desborda.</p>
+
+    <h3>text-overflow: ellipsis;</h3>
+    <div class="box-ejemplo3 box-ejemplo6">CSS IS AWESOME</div>
+    <p>Esta propiedad agrega (...) antes de la parte en la que se va a recortar el contenido, quedando mucho mejor esteticamente</p>
+
     <hr />
     <a href="index.html">Atras</a>
-</body>
+  </body>
 </html>
