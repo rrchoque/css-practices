@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diplay Box en CSS</title>
+    <style>
+        .box-ejemplo1{
+            width: 100px;
+            height: 100px;
+            background: aquamarine;
+            padding: 10px;
+            border: 5px solid blue;
+            margin: 15px;
+            box-sizing: content-box;
+        }
+
+        .box-ejemplo2{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diplay Box en CSS</h1>
+
+    <h2>Los espacios afectan al tamaño de la caja</h2>
+    <div class="box-ejemplo1">
+        100px * 100px
+    </div>
+    <p>El div tiene un espacio interior (padding) de 10px, un borde (border) sólido blue de 5px y un espacio exterior (margin) de 15px. Esto afecta al tamaño final del elemento, teniendo un tamaño final de 130px * 130px, esto puede hacer dificil calcular el tamaño final de nuestros elementos.</p>
+
+    <h2>Propiedad: box-sizing: border-box</h2>
+    <div class="box-ejemplo1 box-ejemplo2">
+        100px * 100px
+    </div>
+    <p>Cuando cambiamos la propiedad box-sizing de content-box (valor por defecto) a border-box, las propiedades width y height incluyen el padding y el border, permitiendonos tener un mejor control del tamaño de nuestros elementos</p>
+    
+    <hr />
+    <a href="index.html">Atras</a>
+</body>
+</html>
