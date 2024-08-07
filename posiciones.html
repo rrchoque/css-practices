@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posiciones</title>
+    <style>
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+      section {
+        border: 5px solid black;
+        width: 250px;
+        height: 250px;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      .section-ejemplo4 {
+        height: 1000px;
+      }
+
+      .container {
+        background: #09f;
+        width: 100px;
+        height: 100px;
+      }
+
+      .container-ejemplo1 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .container-ejemplo2 {
+        position: absolute;
+        /*left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;*/
+        inset: 0;
+        margin: auto;
+      }
+
+      .container-ejemplo3 {
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+
+      .container-ejemplo4 {
+        position: sticky;
+        top: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Posiciones</h1>
+
+    <h2>Ejemplo 1</h2>
+
+    <section>
+      <div class="container container-ejemplo1"></div>
+    </section>
+
+    <p>
+      Para ubicar de manera absoluta un elemento, primero hay que definir un
+      padre con la propiedad <strong>position: relative;</strong> esto permitirá
+      que los elementos hijos se alinien de forma absoluta en función de ese
+      padre, y no de todo el documento.
+    </p>
+
+    <section>
+      <div class="container container-ejemplo2"></div>
+    </section>
+
+    <p>
+      Una forma de centrar un elemento puede ser, definir la posición del hijo
+      como <strong>position: absolute;</strong> y el
+      <strong>margin: auto;</strong> , despues podemos definir todas las
+      posiciones left, right, bottom y top en 0, aunque tambien se puede redusir
+      esto poniendo la propiedad <strong>inset: 0;</strong>.
+    </p>
+    <p>
+      Si bien esta es una forma para centrar un elemento que funciona
+      correctamente no siempre es la mejor forma, existiendo otras queveremos
+      más adelante.
+    </p>
+
+    <section>
+      <div class="container container-ejemplo3"></div>
+    </section>
+
+    <p>
+      La propiedad <strong>position: fixed;</strong> nos permite posicionar un
+      elemento en la pantalla de forma fija, este elemento mantendrá su posición
+      incluso se se realiza scroll de la página
+    </p>
+
+    <section class="section-ejemplo4">
+      <div class="container container-ejemplo4"></div>
+    </section>
+
+    <p>
+        La propiedad <strong>position: sticky;</strong> nos permite posicionar un elemento en función de su padre, pero su posición cambiará para tratar de estar visible hasta donde le sea posible, esto permitirá que se si hacemos escroll en la página, este elemento se moverá para ser visible, hasta donde se lo permita el contenedor padre.
+    </p>
+  </body>
+</html>
