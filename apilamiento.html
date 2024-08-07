@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posiciones</title>
+    <style>
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+
+      section {
+        position: relative;
+        border: 2px solid black;
+        background: bisque;
+        height: 300px;
+        padding: 30px;
+      }
+
+      .caja {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+      .ejemplo1-caja1 {
+        background-color: red;
+        top: 50px;
+        left: 50px;
+        z-index: 1; /* Se apilará debajo */
+      }
+      .ejemplo1-caja2 {
+        background-color: green;
+        top: 80px;
+        left: 80px;
+        z-index: 2; /* Se apilará en el medio */
+      }
+      .ejemplo1-caja3 {
+        background-color: blue;
+        top: 110px;
+        left: 110px;
+        z-index: 3; /* Se apilará encima */
+      }
+
+      /* Contextos de apilamiento anidados */
+      .ejemplo2-contenedor {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        border: 2px solid black;
+        opacity: .8;
+        z-index: 1; /* Nuevo contexto de apilamiento */
+      }
+      .ejemplo2-caja1 {
+        background-color: red;
+        top: 50px;
+        left: 50px;
+        z-index: 2; /* Dentro del contenedor */
+      }
+      .ejemplo2-caja2 {
+        background-color: green;
+        top: 80px;
+        left: 80px;
+        z-index: 3; /* Dentro del contenedor */
+      }
+      .ejemplo2-caja3 {
+        background-color: blue;
+        top: 110px;
+        left: 110px;
+        z-index: 1; /* Dentro del contenedor */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>El contexto de apilamiento</h1>
+
+    <p>
+      El contexto de apilamiento en CSS es un concepto que se utiliza para
+      controlar el orden en el que se superponen los elementos en la página. El
+      valor de z-index se utiliza para especificar el orden de apilamiento de
+      los elementos posicionados (es decir, aquellos con position establecido en
+      relative, absolute, fixed o sticky).
+    </p>
+
+    <p>
+      El z-index solo funciona en elementos que tienen una posición diferente a
+      static. A mayor valor de z-index, más arriba en la pila de apilamiento
+      estará el elemento.
+    </p>
+
+    <p>Aquí tienes un ejemplo:</p>
+
+    <section>
+      <div class="caja ejemplo1-caja1"></div>
+      <div class="caja ejemplo1-caja2"></div>
+      <div class="caja ejemplo1-caja3"></div>
+    </section>
+
+    <p>En este ejemplo, tenemos tres divs con diferentes valores de z-index:</p>
+
+    <ul>
+      <li>.caja1 (rojo) tiene z-index: 1</li>
+      <li>.caja2 (verde) tiene z-index: 2</li>
+      <li>.caja3 (azul) tiene z-index: 3</li>
+    </ul>
+
+    <p>
+      Dado que .caja3 tiene el z-index más alto, se apilará encima de las otras
+      dos cajas. La caja verde se apilará en el medio, y la caja roja se apilará
+      en la parte inferior.
+    </p>
+
+    <h2>Contextos de apilamiento anidados</h2>
+
+    <p>
+      El contexto de apilamiento puede volverse más complejo cuando se anidan
+      elementos. Cada elemento con un z-index que no sea auto crea un nuevo
+      contexto de apilamiento.
+    </p>
+
+    <section>
+    <div class="ejemplo2-contenedor">
+      <div class="caja ejemplo2-caja1"></div>
+      <div class="caja ejemplo2-caja2"></div>
+      <div class="caja ejemplo2-caja3"></div>
+    </div>
+    <div
+      class="caja"
+      style="background-color: yellow; top: 20px; left: 20px; z-index: 0"
+    ></div>      
+    </section>
+
+
+    <p>En este ejemplo:</p>
+    <ul>
+      <li>
+        El contenedor .contenedor tiene un z-index: 1, creando un nuevo contexto
+        de apilamiento.
+      </li>
+      <li>
+        Dentro de .contenedor, las cajas .caja1, .caja2 y .caja3 tienen sus
+        propios z-index que solo afectan el apilamiento dentro del contenedor.
+      </li>
+      <li>
+        La caja amarilla está fuera del contenedor y tiene un z-index: 0, por lo
+        que se apilará debajo del contenedor y sus elementos.
+      </li>
+    </ul>
+
+    <p>
+      El z-index es una herramienta poderosa para controlar la superposición de
+      elementos, especialmente cuando se combinan con contextos de apilamiento
+      anidados.
+    </p>
+
+    <hr />
+    <a href="index.html">Atras</a>
+  </body>
+</html>
