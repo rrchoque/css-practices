@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+
+      section{
+        padding: 20px;
+        border: solid 1px black;
+        background: lavender;
+        margin-bottom: 10px;
+      }
+
+      .ejemplo1-parent{
+        display: flex;
+        flex-direction: row;
+      }
+
+      .ejemplo2-parent{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ejemplo3-parent{
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .ejemplo4-parent{
+        display: flex;
+        direction: rtl;
+      }
+
+      .ejemplo5-parent{
+        display: flex;
+        flex-direction: row;
+        writing-mode: vertical-lr;
+      }
+
+      .item{
+        border: 1px solid black;
+        opacity: .9;
+        width: 100px;
+        height: 100px;
+        background: #09f;
+        display: block;
+      }
+
+      .item:first-child{
+        background: yellow;
+      }
+
+      .item:last-child{
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex</h1>
+    <section class="ejemplo1-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <section class="ejemplo2-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <section class="ejemplo3-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <section class="ejemplo4-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <section class="ejemplo5-parent">
+      <div class="item">primero</div>
+      <div class="item">segundo</div>
+      <div class="item">tercero</div>
+    </section>
+
+    <hr />
+    <a href="index.html">Atras</a>
+  </body>
+</html>
