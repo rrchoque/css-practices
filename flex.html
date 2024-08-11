@@ -11,53 +11,127 @@
         font-weight: 400;
       }
 
-      section{
+      section {
         padding: 20px;
         border: solid 1px black;
         background: lavender;
         margin-bottom: 10px;
       }
 
-      .ejemplo1-parent{
+      .ejemplo1-parent {
         display: flex;
         flex-direction: row;
       }
 
-      .ejemplo2-parent{
+      .ejemplo2-parent {
         display: flex;
         flex-direction: column;
       }
 
-      .ejemplo3-parent{
+      .ejemplo3-parent {
         display: flex;
         flex-direction: row-reverse;
       }
 
-      .ejemplo4-parent{
+      .ejemplo4-parent {
         display: flex;
         direction: rtl;
       }
 
-      .ejemplo5-parent{
+      .ejemplo5-parent {
         display: flex;
         flex-direction: row;
         writing-mode: vertical-lr;
       }
 
-      .item{
+      .ejemplo6-parent {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 200px;
+      }
+
+      .ejemplo7-parent {
+        display: flex;
+        /* flex-direction: row;
+        flex-wrap: nowrap; */
+        flex-flow: row nowrap;
+        width: 250px;
+      }
+
+      .ejemplo7-parent .item {
+        /* Valores iniciales */
+        /* default 0: los elementos NO crecen */
+        flex-grow: 0;
+        /* default 1: los elementos pueden reducir su tamaño a un tamaño mas pequeño que su flex-basis*/
+        flex-shrink: 1;
+        /* default auto: los elementos tiene un tamaño base en auto */
+        flex-basis: auto;
+        /* Todo esto se puede abreviar con flex:0 */
+      }
+
+      .ejemplo8-parent {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 400px;
+      }
+
+      .ejemplo8-parent .item:first-child {
+        flex: 4;
+        order: 3;
+      }
+
+      .ejemplo8-parent .item:nth-child(2){
+        flex: 2;
+      }
+
+      .ejemplo8-parent .item:last-child {
+        flex: 1;
+      }
+
+      .ejemplo9-parent {
+        display: flex;
+        flex-direction: row; /* <- eje principal */
+        padding: 0;
+        width: 500px;
+        justify-content: center;
+      }
+
+      .ejemplo10-parent {
+        justify-content: space-around;
+      }
+
+      .ejemplo11-parent {
+        justify-content: space-between;
+      }
+
+      .ejemplo12-parent {
+        justify-content: space-evenly;
+      }
+
+      .ejemplo13-parent {
+        justify-content: flex-start;
+      }
+
+      .ejemplo14-parent {
+        justify-content: flex-end;
+      }
+
+      .item {
         border: 1px solid black;
-        opacity: .9;
+        opacity: 0.9;
         width: 100px;
         height: 100px;
         background: #09f;
         display: block;
+        box-sizing: border-box;
       }
 
-      .item:first-child{
+      .item:first-child {
         background: yellow;
       }
 
-      .item:last-child{
+      .item:last-child {
         background: red;
       }
     </style>
@@ -92,6 +166,70 @@
       <div class="item">primero</div>
       <div class="item">segundo</div>
       <div class="item">tercero</div>
+    </section>
+
+    <section class="ejemplo6-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <section class="ejemplo7-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+
+    <section class="ejemplo8-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <p>Con la propiedad flex en los hijos, podemos definir el espacio que van a ocupar en el padre, y con la propiedad order, podemos cambiar el orden de los hijos</p>
+
+
+    <h3>justify-content: center;</h3>
+    <section class="ejemplo9-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <h3>justify-content: space-around;</h3>
+    <section class="ejemplo9-parent ejemplo10-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <h3>justify-content: space-between;</h3>
+    <section class="ejemplo9-parent ejemplo11-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <h3>justify-content: space-evenly;</h3>
+    <section class="ejemplo9-parent ejemplo12-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <h3>justify-content: flex-start;</h3>
+    <section class="ejemplo9-parent ejemplo13-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <h3>justify-content: flex-end;</h3>
+    <section class="ejemplo9-parent ejemplo14-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
     </section>
 
     <hr />
