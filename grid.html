@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS GRID</title>
+
+    <style>
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+
+      .container {
+        background: lightsalmon;
+        border: 3px solid black;
+        border-radius: 10px;
+      }
+
+      .container div{
+        background: lightblue;
+        border: 2px solid #90f;
+        border-radius: 6px;
+      }
+
+      .ejemplo1-container {
+        display: grid;
+        grid-template-columns: 50% 100px auto 10vw;
+      }
+
+      .ejemplo2-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+
+      .ejemplo3-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 100px 50px 100px;
+      }
+
+      .ejemplo4-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 100px;
+        grid-auto-rows: 50px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>CSS Grid.</h1>
+    <hr />
+    <h3>grid-template-columns: 50% 100px auto 10vw;</h3>
+    <p>En grid se pueden crear columnas utilizando diferentes unidades de medida, aunque no es recomendable mesclar varias, si es posible hacerlo</p>
+    <section class="container ejemplo1-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+
+    <h3>grid-template-columns: 1fr 2fr 1fr;</h3>
+    <p>En grid podemos utilizar una unidad de medida llamada fracción, que dividirá el espacio disponible de acuerdo a lo que necesitemos.</p>
+    <section class="container ejemplo2-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+
+    <h3>grid-template-rows: 100px 50px 100px;</h3>
+    <p>En grid podemos definir el tamaño de las filas</p>
+    <section class="container ejemplo3-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+
+    <h3>grid-auto-rows: 50px;</h3>
+    <p>La propiedad <code>grid-auto-rows</code> permite definir el tamaño que tendran las filas que se generaran automaticamente, es este ejemplo definimos la primera fila de 100px y las siguientes que se generen de forma automática de 50px.</p>
+    <section class="container ejemplo4-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+    <hr />
+    <a href="index.html">Atras</a>
+  </body>
+</html>
