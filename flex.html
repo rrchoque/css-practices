@@ -117,6 +117,31 @@
         justify-content: flex-end;
       }
 
+      .ejemplo15-parent {
+        gap: 20px; /* espacio entre elementos */
+      }
+
+      .ejemplo16-parent {
+        gap: 20px; 
+        align-items: center;
+      }
+
+      .ejemplo16-parent .item:first-child{
+        height: 50px;
+      }
+
+      .ejemplo16-parent .item:nth-child(2){
+        height: 75px;
+      }
+
+      .ejemplo17-parent {
+        flex-direction: column;
+      }
+
+      .ejemplo18-parent .item:nth-child(2){
+        align-self: flex-start;
+      }
+
       .item {
         border: 1px solid black;
         opacity: 0.9;
@@ -231,6 +256,37 @@
       <div class="item">2</div>
       <div class="item">3</div>
     </section>
+
+
+    <h3>gap: 20px; Espacio entre elementos</h3>
+    <section class="ejemplo9-parent ejemplo15-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <h3>align-items: center; Horizontal</h3>
+    <section class="ejemplo9-parent ejemplo16-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <h3>align-items: center; Vertical</h3>
+    <section class="ejemplo9-parent ejemplo16-parent ejemplo17-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
+    <h3>align-self: flex-start;</h3>
+    <p>Podemos utilizar esta oipción para cambiar la alineación de un item, en este ejemplo cambiamos la alineaciṕon del cuadro azul.</p>
+    <section class="ejemplo9-parent ejemplo16-parent ejemplo18-parent">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+
 
     <hr />
     <a href="index.html">Atras</a>
