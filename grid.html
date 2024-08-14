@@ -18,7 +18,7 @@
         border-radius: 10px;
       }
 
-      .container div{
+      .container div {
         background: lightblue;
         border: 2px solid #90f;
         border-radius: 6px;
@@ -47,13 +47,58 @@
         grid-auto-rows: 50px;
       }
 
+      .ejemplo5-container {
+        display: grid;
+        grid-template-columns: 50px repeat(3, 1fr) 50px;
+        grid-template-rows: repeat(3, 50px);
+      }
+
+      .ejemplo6-container {
+        display: grid;
+        grid-template-columns: repeat(3,50px  1fr);
+        grid-auto-rows: 50px
+      }
+
+      .ejemplo7-container {
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
+      }
+
+      .ejemplo8-container {
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(200px, 1fr)
+        );
+        /* grid-column-gap: 20px;
+        grid-row-gap: 32px; */
+        grid-gap: 32px 16px;
+        padding: 16px;
+      }
+
+      .ejemplo8-container img{
+        border-radius: 8px;
+        width: 100%;
+        height: auto;
+      }
+
+      .ejemplo9-container{
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(200px, 1fr)
+        );
+      }
     </style>
   </head>
   <body>
     <h1>CSS Grid.</h1>
     <hr />
     <h3>grid-template-columns: 50% 100px auto 10vw;</h3>
-    <p>En grid se pueden crear columnas utilizando diferentes unidades de medida, aunque no es recomendable mesclar varias, si es posible hacerlo</p>
+    <p>
+      En grid se pueden crear columnas utilizando diferentes unidades de medida,
+      aunque no es recomendable mesclar varias, si es posible hacerlo
+    </p>
     <section class="container ejemplo1-container">
       <div>1</div>
       <div>2</div>
@@ -65,7 +110,10 @@
     </section>
 
     <h3>grid-template-columns: 1fr 2fr 1fr;</h3>
-    <p>En grid podemos utilizar una unidad de medida llamada fracción, que dividirá el espacio disponible de acuerdo a lo que necesitemos.</p>
+    <p>
+      En grid podemos utilizar una unidad de medida llamada fracción, que
+      dividirá el espacio disponible de acuerdo a lo que necesitemos.
+    </p>
     <section class="container ejemplo2-container">
       <div>1</div>
       <div>2</div>
@@ -89,7 +137,12 @@
     </section>
 
     <h3>grid-auto-rows: 50px;</h3>
-    <p>La propiedad <code>grid-auto-rows</code> permite definir el tamaño que tendran las filas que se generaran automaticamente, es este ejemplo definimos la primera fila de 100px y las siguientes que se generen de forma automática de 50px.</p>
+    <p>
+      La propiedad <code>grid-auto-rows</code> permite definir el tamaño que
+      tendran las filas que se generaran automaticamente, es este ejemplo
+      definimos la primera fila de 100px y las siguientes que se generen de
+      forma automática de 50px.
+    </p>
     <section class="container ejemplo4-container">
       <div>1</div>
       <div>2</div>
@@ -98,6 +151,72 @@
       <div>5</div>
       <div>6</div>
       <div>7</div>
+    </section>
+
+    <h3>grid-template-columns: 50px repeat(3, 1fr) 50px;</h3>
+    <p>
+      La función <code>repeat(3, 1fr)</code> nos permite repetir un valor un determinado número de veces.
+    </p>
+    <section class="container ejemplo5-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+
+    <h3>grid-template-columns: repeat(3,50px  1fr);</h3>
+    <p>
+      La función <code>repeat(3, 50px 1fr)</code> nos permite repetir una secuensia de valores, en este ejemplo tenemos una secuensia de dos campos de 50px y 1fr que se repiten 3 veces.
+    </p>
+    <section class="container ejemplo6-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+
+    <h3>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h3>
+    <p>
+      La función <code>minmax(200px, 1fr)</code> en este ejemplo nos permite repetir una secuensia de dos valores la primera de 50px y la segunda de 1 fracción.
+    </p>
+    <section class="container ejemplo7-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+
+    <h3>grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));</h3>
+    <p>En este ejemplo la propiedad <code>auto-fill</code> determina automaticamente el numero de columnas dependiendo del tamaño del siguiente valor <code>minmax(200px, 1fr)</code> permitiendo agregar una nueva columna siempre que sea posible con el tamaño minimo indicado de 200px.</p>
+    <p>
+      Cuando tienes pocos elementos y quieres que incluso cuando la pantalla en tan grande que no se puedan llenar los campos con las imágenes, puedes utiliar la propiedad <code>autofit</code>, esto ajustará el contenido para ocupar todo el espacio si ya no tienes elementos para hacerlo.
+    </p>
+    <section class="container ejemplo8-container">
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+    </section>
+
+    <h3>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</h3>
+    <p>
+      Cuando tienes pocos elementos y quieres que incluso cuando la pantalla en tan grande que no se puedan llenar los campos con las imágenes, puedes utiliar la propiedad <code>autofit</code>, esto ajustará el contenido para ocupar todo el espacio si ya no tienes elementos para hacerlo.
+    </p>
+    <section class="container ejemplo8-container ejemplo9-container">
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
     </section>
     <hr />
     <a href="index.html">Atras</a>
