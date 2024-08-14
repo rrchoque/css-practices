@@ -127,6 +127,51 @@
         opacity: .8;
       }
 
+      .ejemplo11-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 1fr 200px;
+        min-height: 100vh;
+        grid-template-areas: 
+          "header header sidebar"
+          "content content content"
+          "footer footer footer"
+        ;
+      }
+
+      @media ( width > 400px ) {
+        .ejemplo11-container {
+        grid-template-areas: 
+          "header header header"
+          "sidebar content content"
+          "footer footer footer"
+        ;
+      }
+      }
+
+      .ejemplo11-container header{
+        background: #09f;
+        /* grid-column: 1/-1; */
+        grid-area: header;
+      }
+
+      .ejemplo11-container aside{
+        background: yellow;
+        grid-area: sidebar;
+      }
+
+      .ejemplo11-container main{
+        background: red;
+        /* grid-column: span 2; */
+        grid-area: content;
+      }
+
+      .ejemplo11-container footer{
+        background: green;
+        /* grid-column: 1/-1; */
+        grid-area: footer;
+      }
+
     </style>
   </head>
   <body>
@@ -276,6 +321,15 @@
       <div>7</div>
     </section>
 
+
+    <h3>grid-template-areas</h3>
+    <p>Con la propiedad <code>grid-template-areas</code>, puedes nombrar los elementos y en el contenedor practicamente dibujar como se verían los elementos, y con estos mismos nombres podemos poner un diseño diferente para diferentes tipos de dispositivos con media queries.</p>
+    <section class="container ejemplo11-container">
+      <header>header</header>
+      <aside>aside</aside>
+      <main>content</main>
+      <footer>footer</footer>
+    </section>
     <hr />
     <a href="index.html">Atras</a>
   </body>
