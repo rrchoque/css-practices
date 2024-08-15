@@ -172,6 +172,31 @@
         grid-area: footer;
       }
 
+      .ejemplo12-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 50px;
+        gap: 4px;
+        height: 300px;
+        width: 300px;
+        grid-auto-rows: 50px;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .ejemplo13-container {
+        display: grid;
+        grid-template-columns: repeat(3, 50px);
+        grid-auto-rows: 50px;
+        gap: 4px;
+        height: 300px;
+        width: 300px;
+        grid-auto-rows: 50px;
+        /* justify-content: center;
+        align-content: center; */
+        place-content: center;
+      }
+
     </style>
   </head>
   <body>
@@ -330,6 +355,36 @@
       <main>content</main>
       <footer>footer</footer>
     </section>
+
+    <h3>Alinear los elementos</h3>
+    <p>Las propiedades <code>align-items: center;
+      </code> y <code>justify-items: center;</code> permiten alinear el contenido de dichos elementos dentro de la cuadricula.</p>
+    <section class="container ejemplo12-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+
+    <h3>Alinear la cuadricula</h3>
+    <p>Las propiedades <code>justify-content: center;</code> y <code>align-content: center;</code> nos permite alinear el contenedor o la grilla dentro del contenedor.
+
+      existe ademas una forma abreviada de alinear tanto horizontal como verticalmente con la propiedad <code>place-content: center;</code>.
+      
+      </p>
+    <section class="container ejemplo13-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </section>
+
     <hr />
     <a href="index.html">Atras</a>
   </body>
