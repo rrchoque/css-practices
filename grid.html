@@ -55,8 +55,8 @@
 
       .ejemplo6-container {
         display: grid;
-        grid-template-columns: repeat(3,50px  1fr);
-        grid-auto-rows: 50px
+        grid-template-columns: repeat(3, 50px 1fr);
+        grid-auto-rows: 50px;
       }
 
       .ejemplo7-container {
@@ -67,37 +67,31 @@
       .ejemplo8-container {
         display: grid;
         /* grid-template-columns: 1fr 1fr 1fr; */
-        grid-template-columns: repeat(
-          auto-fill,
-          minmax(200px, 1fr)
-        );
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         /* grid-column-gap: 20px;
         grid-row-gap: 32px; */
         grid-gap: 32px 16px;
         padding: 16px;
       }
 
-      .ejemplo8-container img{
+      .ejemplo8-container img {
         border-radius: 8px;
         width: 100%;
         height: auto;
       }
 
-      .ejemplo9-container{
-        grid-template-columns: repeat(
-          auto-fit,
-          minmax(200px, 1fr)
-        );
+      .ejemplo9-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       }
 
       .ejemplo10-container {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 100px;
         gap: 10px;
       }
 
-      .ejemplo10-container div:first-child{
+      .ejemplo10-container div:first-child {
         background-color: lightgreen;
         border: solid 2px green;
         grid-column-start: 1;
@@ -106,25 +100,25 @@
         grid-row-end: 3;
       }
 
-      .ejemplo10-container div:nth-child(2){
+      .ejemplo10-container div:nth-child(2) {
         background-color: lightpink;
         border: solid 2px brown;
         grid-column-start: span 2;
       }
 
-      .ejemplo10-container div:nth-child(5){
+      .ejemplo10-container div:nth-child(5) {
         background-color: lightslategray;
         border: solid 2px black;
         grid-column: 2/4;
         grid-row: 3/4;
       }
 
-      .ejemplo10-container div:nth-child(6){
+      .ejemplo10-container div:nth-child(6) {
         background-color: lightyellow;
         border: solid 2px yellow;
         grid-column: 1/3;
         grid-row: 3/4;
-        opacity: .8;
+        opacity: 0.8;
       }
 
       .ejemplo11-container {
@@ -132,41 +126,39 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 100px 1fr 200px;
         min-height: 100vh;
-        grid-template-areas: 
+        grid-template-areas:
           "header header sidebar"
           "content content content"
-          "footer footer footer"
-        ;
+          "footer footer footer";
       }
 
-      @media ( width > 400px ) {
+      @media (width > 400px) {
         .ejemplo11-container {
-        grid-template-areas: 
-          "header header header"
-          "sidebar content content"
-          "footer footer footer"
-        ;
-      }
+          grid-template-areas:
+            "header header header"
+            "sidebar content content"
+            "footer footer footer";
+        }
       }
 
-      .ejemplo11-container header{
+      .ejemplo11-container header {
         background: #09f;
         /* grid-column: 1/-1; */
         grid-area: header;
       }
 
-      .ejemplo11-container aside{
+      .ejemplo11-container aside {
         background: yellow;
         grid-area: sidebar;
       }
 
-      .ejemplo11-container main{
+      .ejemplo11-container main {
         background: red;
         /* grid-column: span 2; */
         grid-area: content;
       }
 
-      .ejemplo11-container footer{
+      .ejemplo11-container footer {
         background: green;
         /* grid-column: 1/-1; */
         grid-area: footer;
@@ -196,7 +188,6 @@
         align-content: center; */
         place-content: center;
       }
-
     </style>
   </head>
   <body>
@@ -263,7 +254,8 @@
 
     <h3>grid-template-columns: 50px repeat(3, 1fr) 50px;</h3>
     <p>
-      La función <code>repeat(3, 1fr)</code> nos permite repetir un valor un determinado número de veces.
+      La función <code>repeat(3, 1fr)</code> nos permite repetir un valor un
+      determinado número de veces.
     </p>
     <section class="container ejemplo5-container">
       <div>1</div>
@@ -275,9 +267,11 @@
       <div>7</div>
     </section>
 
-    <h3>grid-template-columns: repeat(3,50px  1fr);</h3>
+    <h3>grid-template-columns: repeat(3,50px 1fr);</h3>
     <p>
-      La función <code>repeat(3, 50px 1fr)</code> nos permite repetir una secuensia de valores, en este ejemplo tenemos una secuensia de dos campos de 50px y 1fr que se repiten 3 veces.
+      La función <code>repeat(3, 50px 1fr)</code> nos permite repetir una
+      secuensia de valores, en este ejemplo tenemos una secuensia de dos campos
+      de 50px y 1fr que se repiten 3 veces.
     </p>
     <section class="container ejemplo6-container">
       <div>1</div>
@@ -291,7 +285,9 @@
 
     <h3>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h3>
     <p>
-      La función <code>minmax(200px, 1fr)</code> en este ejemplo nos permite repetir una secuensia de dos valores la primera de 50px y la segunda de 1 fracción.
+      La función <code>minmax(200px, 1fr)</code> en este ejemplo nos permite
+      repetir una secuensia de dos valores la primera de 50px y la segunda de 1
+      fracción.
     </p>
     <section class="container ejemplo7-container">
       <div>1</div>
@@ -304,38 +300,71 @@
     </section>
 
     <h3>grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));</h3>
-    <p>En este ejemplo la propiedad <code>auto-fill</code> determina automaticamente el numero de columnas dependiendo del tamaño del siguiente valor <code>minmax(200px, 1fr)</code> permitiendo agregar una nueva columna siempre que sea posible con el tamaño minimo indicado de 200px.</p>
     <p>
-      Cuando tienes pocos elementos y quieres que incluso cuando la pantalla en tan grande que no se puedan llenar los campos con las imágenes, puedes utiliar la propiedad <code>autofit</code>, esto ajustará el contenido para ocupar todo el espacio si ya no tienes elementos para hacerlo.
+      En este ejemplo la propiedad <code>auto-fill</code> determina
+      automaticamente el numero de columnas dependiendo del tamaño del siguiente
+      valor <code>minmax(200px, 1fr)</code> permitiendo agregar una nueva
+      columna siempre que sea posible con el tamaño minimo indicado de 200px.
+    </p>
+    <p>
+      Cuando tienes pocos elementos y quieres que incluso cuando la pantalla en
+      tan grande que no se puedan llenar los campos con las imágenes, puedes
+      utiliar la propiedad <code>autofit</code>, esto ajustará el contenido para
+      ocupar todo el espacio si ya no tienes elementos para hacerlo.
     </p>
     <section class="container ejemplo8-container">
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
     </section>
 
     <h3>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</h3>
     <p>
-      Cuando tienes pocos elementos y quieres que incluso cuando la pantalla en tan grande que no se puedan llenar los campos con las imágenes, puedes utiliar la propiedad <code>autofit</code>, esto ajustará el contenido para ocupar todo el espacio si ya no tienes elementos para hacerlo.
+      Cuando tienes pocos elementos y quieres que incluso cuando la pantalla en
+      tan grande que no se puedan llenar los campos con las imágenes, puedes
+      utiliar la propiedad <code>autofit</code>, esto ajustará el contenido para
+      ocupar todo el espacio si ya no tienes elementos para hacerlo.
     </p>
     <section class="container ejemplo8-container ejemplo9-container">
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
-        <img src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg" >
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
+      <img
+        src="https://i.pinimg.com/736x/66/bd/9b/66bd9b1f8354a9aa6900dee35bc2a911.jpg"
+      />
     </section>
 
     <h3>Modificar el tamaño de los elementos</h3>
     <p>
-      con Grid es posble definir la ubicación y el tamaño de los elementos mediante <code> grid-column-start: 1;
-        grid-column-end: 3;</code> y <code>
-        grid-row-start: 1;
-        grid-row-end: 3;</code> pero existe tambien una forma abreviada que es <code>grid-column: 2/4;
-          </code> y <code>grid-row: 3/4;</code>, otra forma es indicarle el espacio que debe ocupar y no de donde debe comenzar mediante <code>grid-column-start: span 2;</code>.
+      con Grid es posble definir la ubicación y el tamaño de los elementos
+      mediante <code> grid-column-start: 1; grid-column-end: 3;</code> y
+      <code> grid-row-start: 1; grid-row-end: 3;</code> pero existe tambien una
+      forma abreviada que es <code>grid-column: 2/4; </code> y
+      <code>grid-row: 3/4;</code>, otra forma es indicarle el espacio que debe
+      ocupar y no de donde debe comenzar mediante
+      <code>grid-column-start: span 2;</code>.
     </p>
-    <p>Como se puede ver en el ejemplo tambien es posible sobreponer elementos.</p>
+    <p>
+      Como se puede ver en el ejemplo tambien es posible sobreponer elementos.
+    </p>
     <section class="container ejemplo10-container">
       <div>1</div>
       <div>2</div>
@@ -346,9 +375,13 @@
       <div>7</div>
     </section>
 
-
     <h3>grid-template-areas</h3>
-    <p>Con la propiedad <code>grid-template-areas</code>, puedes nombrar los elementos y en el contenedor practicamente dibujar como se verían los elementos, y con estos mismos nombres podemos poner un diseño diferente para diferentes tipos de dispositivos con media queries.</p>
+    <p>
+      Con la propiedad <code>grid-template-areas</code>, puedes nombrar los
+      elementos y en el contenedor practicamente dibujar como se verían los
+      elementos, y con estos mismos nombres podemos poner un diseño diferente
+      para diferentes tipos de dispositivos con media queries.
+    </p>
     <section class="container ejemplo11-container">
       <header>header</header>
       <aside>aside</aside>
@@ -357,8 +390,11 @@
     </section>
 
     <h3>Alinear los elementos</h3>
-    <p>Las propiedades <code>align-items: center;
-      </code> y <code>justify-items: center;</code> permiten alinear el contenido de dichos elementos dentro de la cuadricula.</p>
+    <p>
+      Las propiedades <code>align-items: center; </code> y
+      <code>justify-items: center;</code> permiten alinear el contenido de
+      dichos elementos dentro de la cuadricula.
+    </p>
     <section class="container ejemplo12-container">
       <div>1</div>
       <div>2</div>
@@ -370,11 +406,13 @@
     </section>
 
     <h3>Alinear la cuadricula</h3>
-    <p>Las propiedades <code>justify-content: center;</code> y <code>align-content: center;</code> nos permite alinear el contenedor o la grilla dentro del contenedor.
-
-      existe ademas una forma abreviada de alinear tanto horizontal como verticalmente con la propiedad <code>place-content: center;</code>.
-      
-      </p>
+    <p>
+      Las propiedades <code>justify-content: center;</code> y
+      <code>align-content: center;</code> nos permite alinear el contenedor o la
+      grilla dentro del contenedor. existe ademas una forma abreviada de alinear
+      tanto horizontal como verticalmente con la propiedad
+      <code>place-content: center;</code>.
+    </p>
     <section class="container ejemplo13-container">
       <div>1</div>
       <div>2</div>
