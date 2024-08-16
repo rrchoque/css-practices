@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animaciones CSS</title>
+    <style>
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+
+      .container {
+        background: lightsalmon;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        display: grid;
+        place-content: center;
+        height: 200px;
+      }
+
+      .pulser {
+        width: 30px;
+        height: 30px;
+        background: #09f;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .pulser:hover{
+        scale: 2;
+        background: purple;
+        box-shadow: 0 0 10px purple;
+      }
+
+      .ejemplo1-pulser {
+        transition-duration: 2s;
+      }
+
+      .ejemplo2-pulser {
+        transition-duration: 2s;
+        transition-property: background, scale;
+      }
+
+
+      .ejemplo3-pulser {
+        transition-duration: 2s;
+        /* transition-timing-function: ease; */
+        transition-timing-function: cubic-bezier(.63,.11,.62,1.08);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Transiciones</h1>
+
+    <p>Con la propiedad <code>transition-duration: 2s;</code> puedes indicar que va a existir una transición y el tiempo que va a durar esta transición.</p>
+    <section class="container">
+      <div class="pulser ejemplo1-pulser"></div>
+    </section>
+
+    <p>Con la propiedad <code>transition-property: background, scale;</code> le puedes indicar que propiedades van a ser animadas, en este ejemplo no se está animando el <code>box-shadow</code>.</p>
+    <section class="container">
+      <div class="pulser ejemplo2-pulser"></div>
+    </section>
+
+    <p>La propiedad <code>transition-timing-function: ease;</code> permite cambiar la valosidad lineal de la transición, esto es que le podemos indicar que la animación no sea todo el tiempo a la misma velocidad, en este ejemplo utilizamos <code>ease</code> que hace que la transición comiense rapido y poco a poco se haga mas lenta.</p>
+
+    <p>Esta curva de velocidad puede cambiarse con la propiedad <code>cubic-bezier(.63,.11,.62,1.08)</code> y en la actualidad existen herramientas, incluida las herrameintas de desarrollo de los navegadores para ajustar esta propiedad.</p>
+    <section class="container">
+      <div class="pulser ejemplo3-pulser"></div>
+    </section>
+    <hr />
+    <a href="index.html">Atras</a>
+  </body>
+</html>
