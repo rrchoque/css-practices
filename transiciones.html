@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transiciones CSS</title>
+    <style>
+      body {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+
+      .container {
+        background: lightsalmon;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        display: grid;
+        place-content: center;
+        height: 200px;
+      }
+
+      .pulser {
+        width: 30px;
+        height: 30px;
+        background: #09f;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .pulser:hover {
+        scale: 2;
+        background: purple;
+        box-shadow: 0 0 10px purple;
+      }
+
+      .ejemplo1-pulser {
+        transition-duration: 2s;
+      }
+
+      .ejemplo2-pulser {
+        transition-duration: 2s;
+        transition-property: background, scale;
+      }
+
+      .ejemplo3-pulser {
+        transition-duration: 2s;
+        /* transition-timing-function: ease; */
+        transition-timing-function: cubic-bezier(0.63, 0.11, 0.62, 1.08);
+      }
+
+      .ejemplo4-pulser {
+        transition-duration: 2s;
+        transition-timing-function: steps(8);
+      }
+
+      .ejemplo5-container {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+      }
+      .ejemplo5-container .pulser {
+        opacity: 0;
+      }
+
+      .ejemplo5-container:hover .pulser {
+        opacity: 1;
+      }
+
+      .ejemplo5-pulser {
+        transition-duration: 2s;
+      }
+
+      .ejemplo5-pulser:first-child {
+        transition-delay: 0ms;
+      }
+
+      .ejemplo5-pulser:nth-child(2) {
+        transition-delay: 300ms;
+      }
+
+      .ejemplo5-pulser:nth-child(3) {
+        transition-delay: 600ms;
+      }
+
+      .ejemplo6-pulser {
+        transition: background 300ms linear 200ms, scale 500ms ease-in-out,
+          box-shadow 1s ease;
+      }
+
+      .ejemplo7-pulser {
+        transition: all 300ms linear 200ms;
+      }
+
+      .ejemplo7-pulser:hover {
+        transition-duration: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Transiciones</h1>
+
+    <p>
+      Con la propiedad <code>transition-duration: 2s;</code> puedes indicar que
+      va a existir una transición y el tiempo que va a durar esta transición.
+    </p>
+    <section class="container">
+      <div class="pulser ejemplo1-pulser"></div>
+    </section>
+
+    <p>
+      Con la propiedad <code>transition-property: background, scale;</code> le
+      puedes indicar que propiedades van a ser animadas, en este ejemplo no se
+      está animando el <code>box-shadow</code>.
+    </p>
+    <section class="container">
+      <div class="pulser ejemplo2-pulser"></div>
+    </section>
+
+    <p>
+      La propiedad <code>transition-timing-function: ease;</code> permite
+      cambiar la valosidad lineal de la transición, esto es que le podemos
+      indicar que la animación no sea todo el tiempo a la misma velocidad, en
+      este ejemplo utilizamos <code>ease</code> que hace que la transición
+      comiense rapido y poco a poco se haga mas lenta.
+    </p>
+
+    <p>
+      Esta curva de velocidad puede cambiarse con la propiedad
+      <code>cubic-bezier(.63,.11,.62,1.08)</code> y en la actualidad existen
+      herramientas, incluida las herrameintas de desarrollo de los navegadores
+      para ajustar esta propiedad.
+    </p>
+    <section class="container">
+      <div class="pulser ejemplo3-pulser"></div>
+    </section>
+
+    <p>
+      Con la propiedad
+      <code> transition-timing-function: steps(8);</code> se puede definir la
+      cantidad de pasos que dará para completar la transición, mientras mas alto
+      el número se verá más fluido pero hacerlo en menos pasos puede tambien ser
+      útil en algunos casos.
+    </p>
+    <section class="container">
+      <div class="pulser ejemplo4-pulser"></div>
+    </section>
+
+    <p>
+      Se puede indicar un retraso diferente para la transisión con la propiedad
+      <code>transition-delay: 300ms;</code>, y puede ser interesante cuando
+      tienes muchos elementos que animar:
+    </p>
+    <section class="container ejemplo5-container">
+      haz hover para mostrar los elementos
+      <div class="pulser ejemplo5-pulser"></div>
+      <div class="pulser ejemplo5-pulser"></div>
+      <div class="pulser ejemplo5-pulser"></div>
+    </section>
+
+    <p>Existe una forma abreviada de definir las transiciones y se la realiza de la siguinete forma <code>transition: background 300ms linear 200ms, scale 500ms ease-in-out;</code> donde en la propiedad <code>transition</code> se ponen las transiciones en el siguiente orden: propiedad, duración, tipo de animación y finalmente el delay, como se puede ver en el ejemplo si tenemos muchas propiedades que animar las podemos separar con una coma.</p>
+    <section class="container">
+      <div class="pulser ejemplo6-pulser"></div>
+    </section>
+
+    <p>Tambien es posible tener duraciones diferentes al crear la animación como al retornar al estado inicial, esto se logra agregando la propiedad <code>transition-duration: 1s;</code> al estado final en este caso el <code>hover</code>, esto indica el tiempo en llegar a este estado, que como podemos ver en este ejemplo es más larga que la animación de retorno.</p>
+    <section class="container">
+      <div class="pulser ejemplo7-pulser"></div>
+    </section>
+
+    <hr />
+    <a href="index.html">Atras</a>
+  </body>
+</html>
