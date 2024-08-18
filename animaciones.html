@@ -39,7 +39,7 @@
       }
 
       .ejemplo1-pulser {
-        animation: move;
+        animation-name: move;
         animation-duration: 3s;
       }
 
@@ -86,7 +86,7 @@
         width: 50px;
         height: auto;
         margin-bottom: 10px;
-        animation: mario;
+        animation-name: mario;
         animation-duration: 2s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
@@ -108,8 +108,17 @@
         }
       }
 
-      .ejemplo4-mario:hover{
+      .ejemplo4-mario:hover {
         animation-play-state: paused;
+      }
+
+      .ejemplo5-mario {
+        animation-iteration-count: initial;
+        animation-fill-mode: both;
+      }
+
+      .ejemplo6-mario {
+        animation: move 2s steps(10) 3 both;
       }
     </style>
   </head>
@@ -132,7 +141,12 @@
     </section>
 
     <p>
-      La propiedad <code>animation-direction:</code> nos permite indicar la dirección de la animación, siendo la opción por defecto <code>normal</code> con el primer mario, la segunda es <code>reverse</code> en el cual realiza la misma ruta pero comenzando de la posición final a la inicial, y finalmente <code>alternate</code> en la que primero se anima de forma alternada entre normal y reverse.
+      La propiedad <code>animation-direction:</code> nos permite indicar la
+      dirección de la animación, siendo la opción por defecto
+      <code>normal</code> con el primer mario, la segunda es
+      <code>reverse</code> en el cual realiza la misma ruta pero comenzando de
+      la posición final a la inicial, y finalmente <code>alternate</code> en la
+      que primero se anima de forma alternada entre normal y reverse.
     </p>
     <section class="container">
       <img
@@ -152,13 +166,39 @@
       />
     </section>
 
-    <p>Con la propiedad <code>animation-play-state: paused;</code> podemos pausar la animación en respuesta a una acción o mediante javascript.</p>
+    <p>
+      Con la propiedad <code>animation-play-state: paused;</code> podemos pausar
+      la animación en respuesta a una acción o mediante javascript.
+    </p>
     <section class="container">
       Hover para pausar:
       <img
         src="image/pngwing.com.png"
         alt="mario"
         class="mario ejemplo4-mario"
+      />
+    </section>
+
+    <p>
+      De forma predeterminado una animación al ternimar, el elemento regresa a
+      su estado inicial, pero con la propiedad
+      <code>animation-fill-mode: both;</code> podemos hacer que el elemento se
+      quede en el estado final de la animación.
+    </p>
+    <section class="container">
+      <img
+        src="image/pngwing.com.png"
+        alt="mario"
+        class="mario ejemplo5-mario"
+      />
+    </section>
+
+    <p>Existe una forma abreviada de poner las propiedades de la animacion, y para este ejemplo sería la siguiente, <code>animation: move 2s steps(10) 3 both;</code> donde el primer elemento <code>move</code> es el nombre de la animación, 2s es la duración, la forma de animar es en 10 pasos con <code>steps(10)</code>, la cantidad de iteraciones es de 3, el ultimo es donde debe terminar la animación, que para este ejemplo es el estado final.</p>
+    <section class="container">
+      <img
+        src="image/pngwing.com.png"
+        alt="mario"
+        class="mario ejemplo6-mario"
       />
     </section>
     <hr />
