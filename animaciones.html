@@ -118,7 +118,26 @@
       }
 
       .ejemplo6-mario {
-        animation: move 2s steps(10) 3 both;
+        animation: move 2s steps(10) 3 both,
+        agrandar 1s linear 6s both;
+      }
+
+      @keyframes agrandar{
+        25%{
+          scale: 1.4;
+        }
+
+        50% {
+          scale: 2;
+        }
+
+        75%{
+          scale: 1.6;
+        }
+
+        100%{
+          scale: 2
+        }
       }
     </style>
   </head>
