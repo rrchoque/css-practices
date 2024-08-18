@@ -48,7 +48,7 @@
       } */
 
       .ejemplo2-pulser::before {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 100%;
@@ -74,12 +74,42 @@
 
         50% {
           scale: 1.8;
-          opacity: .4;
+          opacity: 0.4;
         }
 
-        100%{
-          opacity: .6;
+        100% {
+          opacity: 0.6;
         }
+      }
+
+      .mario {
+        width: 50px;
+        height: auto;
+        margin-bottom: 10px;
+        animation: mario;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      .ejemplo1-mario {
+        animation-direction: normal;
+      }
+      .ejemplo2-mario {
+        animation-direction: reverse;
+      }
+      .ejemplo3-mario {
+        animation-direction: alternate;
+      }
+
+      @keyframes mario {
+        to {
+          transform: translateX(200px);
+        }
+      }
+
+      .ejemplo4-mario:hover{
+        animation-play-state: paused;
       }
     </style>
   </head>
@@ -91,9 +121,45 @@
       <div class="pulser ejemplo1-pulser"></div>
     </section>
 
-    <p>La propiedad <code>animation-iteration-count: 5;</code> nos permite indicar que la animación se debe repetir 5 veces, pero si queremos que la animación se haga de forma infinita ponemos el valor <code>infinite</code> .</p>
+    <p>
+      La propiedad <code>animation-iteration-count: 5;</code> nos permite
+      indicar que la animación se debe repetir 5 veces, pero si queremos que la
+      animación se haga de forma infinita ponemos el valor
+      <code>infinite</code> .
+    </p>
     <section class="container">
       <div class="pulser ejemplo2-pulser"></div>
+    </section>
+
+    <p>
+      La propiedad <code>animation-direction:</code> nos permite indicar la dirección de la animación, siendo la opción por defecto <code>normal</code> con el primer mario, la segunda es <code>reverse</code> en el cual realiza la misma ruta pero comenzando de la posición final a la inicial, y finalmente <code>alternate</code> en la que primero se anima de forma alternada entre normal y reverse.
+    </p>
+    <section class="container">
+      <img
+        src="image/pngwing.com.png"
+        alt="mario"
+        class="mario ejemplo1-mario"
+      />
+      <img
+        src="image/pngwing.com.png"
+        alt="mario"
+        class="mario ejemplo2-mario"
+      />
+      <img
+        src="image/pngwing.com.png"
+        alt="mario"
+        class="mario ejemplo3-mario"
+      />
+    </section>
+
+    <p>Con la propiedad <code>animation-play-state: paused;</code> podemos pausar la animación en respuesta a una acción o mediante javascript.</p>
+    <section class="container">
+      Hover para pausar:
+      <img
+        src="image/pngwing.com.png"
+        alt="mario"
+        class="mario ejemplo4-mario"
+      />
     </section>
     <hr />
     <a href="index.html">Atras</a>
