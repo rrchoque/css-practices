@@ -10,12 +10,91 @@
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 400;
       }
+      .container {
+        background: lightsalmon;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        display: grid;
+        place-content: center;
+        height: 200px;
+      }
 
+      .pulser {
+        width: 50px;
+        height: 50px;
+        background: #09f;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      @keyframes move {
+        from {
+          transform: translateX(0px);
+        }
+
+        to {
+          transform: translateX(100px);
+        }
+      }
+
+      .ejemplo1-pulser {
+        animation: move;
+        animation-duration: 3s;
+      }
+
+      /* .ejemplo2-pulser{
+        z-index: 1;
+      } */
+
+      .ejemplo2-pulser::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #09f;
+        border-radius: 50%;
+        /* z-index: 0; */
+
+        /* scale: 2;
+        opacity: .5; */
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        /* animation-iteration-count: 5; */
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 0;
+        }
+
+        50% {
+          scale: 1.8;
+          opacity: .4;
+        }
+
+        100%{
+          opacity: .6;
+        }
+      }
     </style>
   </head>
   <body>
     <h1>Animaciones</h1>
 
+    <p></p>
+    <section class="container">
+      <div class="pulser ejemplo1-pulser"></div>
+    </section>
+
+    <p>La propiedad <code>animation-iteration-count: 5;</code> nos permite indicar que la animación se debe repetir 5 veces, pero si queremos que la animación se haga de forma infinita ponemos el valor <code>infinite</code> .</p>
+    <section class="container">
+      <div class="pulser ejemplo2-pulser"></div>
+    </section>
     <hr />
     <a href="index.html">Atras</a>
   </body>
