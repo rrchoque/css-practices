@@ -118,12 +118,11 @@
       }
 
       .ejemplo6-mario {
-        animation: move 2s steps(10) 3 both,
-        agrandar 1s linear 6s both;
+        animation: move 2s steps(10) 3 both, agrandar 1s linear 6s both;
       }
 
-      @keyframes agrandar{
-        25%{
+      @keyframes agrandar {
+        25% {
           scale: 1.4;
         }
 
@@ -131,14 +130,87 @@
           scale: 2;
         }
 
-        75%{
+        75% {
           scale: 1.6;
         }
 
-        100%{
-          scale: 2
+        100% {
+          scale: 2;
         }
       }
+
+      #container-yugioh {
+        background: lightsalmon;
+        border: 3px solid black;
+        padding: 10px;
+        height: 200px;
+        overflow-y: scroll;
+        position: relative;
+      }
+
+      #progress {
+        position: sticky;
+        top: 0;
+        width: 1%;
+        background: red;
+        height: 10px;
+        border-radius: 5px;
+
+        animation: progress-grow auto linear;
+        animation-timeline: scroll(nearest block);
+      }
+
+      @keyframes progress-grow {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      #container-fotos {
+        height: 600px;
+        overflow: auto;
+        background: black;
+        position: relative;
+      }
+
+      #container-fotos h2 {
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin: 0;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        left: 0;
+
+        animation: enhance-header linear both;
+        animation-timeline: scroll(nearest);
+        animation-range: 0 200px;
+      }
+
+      #container-fotos section {
+        columns: 2;
+        padding: 10px;
+      }
+
+      #container-fotos section img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      @keyframes enhance-header {
+        to {
+          background: rgb(227, 235, 253, .4);
+          backdrop-filter: blur(5px);
+          font-size: 15px;
+          color: black;
+        }
+      }
+
     </style>
   </head>
   <body>
@@ -212,7 +284,22 @@
       />
     </section>
 
-    <p>Existe una forma abreviada de poner las propiedades de la animacion, y para este ejemplo sería la siguiente, <code>animation: move 2s steps(10) 3 both;</code> donde el primer elemento <code>move</code> es el nombre de la animación, 2s es la duración, la forma de animar es en 10 pasos con <code>steps(10)</code>, la cantidad de iteraciones es de 3, el ultimo es donde debe terminar la animación, que para este ejemplo es el estado final.</p>
+    <p>
+      Existe una forma abreviada de poner las propiedades de la animacion, y
+      para este ejemplo sería la siguiente,
+      <code>animation: move 2s steps(10) 3 both;</code> donde el primer elemento
+      <code>move</code> es el nombre de la animación, 2s es la duración, la
+      forma de animar es en 10 pasos con <code>steps(10)</code>, la cantidad de
+      iteraciones es de 3, el ultimo es donde debe terminar la animación, que
+      para este ejemplo es el estado final.
+    </p>
+    <p>
+      esta forma de definir la nimación, ademas permite anidar animaciones, como
+      en este ejemplo en el que podemos ver que al terminar de animar el
+      movimiento, se aplica la animación en la que crece, que en este ejemplo se
+      hace al final porque tiene un delay de 6s pero tranquilamente puede ser de
+      forma simultanea.
+    </p>
     <section class="container">
       <img
         src="image/pngwing.com.png"
@@ -220,6 +307,119 @@
         class="mario ejemplo6-mario"
       />
     </section>
+
+    <p>
+      Existe tambien una propiedad que permite cambiar la linea del tiempo por
+      otro elemento como el scroll de un elemento como en siguiente ejemplo, al
+      utilizar <code>animation-timeline: scroll(nearest block);</code> le
+      indicamos que la linea de tiempo estará enlasada al scroll del un
+      contenedor
+    </p>
+
+    <div id="container-yugioh">
+      <div id="progress"></div>
+      <section id="historia">
+        <h2>Historia</h2>
+        <p>
+          Yu-Gi-Oh! es un juego de cartas coleccionables que se basa en la
+          popular franquicia de anime y manga creada por Kazuki Takahashi.
+          Lanzado por primera vez en 1999, el juego rápidamente se convirtió en
+          un fenómeno mundial, atrayendo a millones de jugadores y
+          coleccionistas.
+        </p>
+      </section>
+
+      <section id="como-jugar">
+        <h2>Cómo Jugar</h2>
+        <p>
+          El juego se centra en el duelo entre dos jugadores, cada uno con un
+          mazo de cartas. El objetivo es reducir los puntos de vida del oponente
+          a cero utilizando una combinación de monstruos, hechizos y trampas.
+          Cada jugador comienza con 8000 puntos de vida y toma turnos para jugar
+          cartas y atacar al oponente.
+        </p>
+      </section>
+
+      <section id="cartas-iconicas">
+        <h2>Cartas Icónicas</h2>
+        <p>Algunas de las cartas más icónicas del juego incluyen:</p>
+        <ul>
+          <li>
+            <strong>El Dragón Blanco de Ojos Azules</strong> - Un monstruo de
+            alto ataque y uno de los favoritos del protagonista, Seto Kaiba.
+          </li>
+          <li>
+            <strong>Exodia, el Prohibido</strong> - Un conjunto de cinco cartas
+            que, si se reúnen en la mano, garantizan una victoria instantánea.
+          </li>
+          <li>
+            <strong>El Mago Oscuro</strong> - La carta insignia de Yugi Mutou,
+            el héroe principal de la serie.
+          </li>
+        </ul>
+      </section>
+
+      <section id="expansiones">
+        <h2>Expansiones</h2>
+        <p>
+          A lo largo de los años, Yu-Gi-Oh! ha lanzado numerosas expansiones que
+          han introducido nuevas cartas, mecánicas y estrategias en el juego.
+          Algunas de las expansiones más populares incluyen:
+        </p>
+        <ul>
+          <li>
+            <strong>Legend of Blue Eyes White Dragon</strong> - La primera
+            expansión del juego.
+          </li>
+          <li>
+            <strong>Metal Raiders</strong> - Introdujo cartas poderosas como
+            "Espada de la Llama Oscura".
+          </li>
+          <li>
+            <strong>Invasion of Chaos</strong> - Famosa por las cartas de "Caos"
+            y "Magia Negra Renacida".
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <p>Cuando utilizamos el scroll com timeline, es posible definier el rango en que se aplicará la animación con <code>animation-range: 0 200px;</code> así no es necesario esperar al final del scrool para que termine la animación.</p>
+
+    <div id="container-fotos">
+      <h2>Curso de CSS Animaciones</h2>
+      <section>
+        <img
+          src="https://i.pinimg.com/736x/68/8d/d3/688dd325dbbdc238f4b70caffe77a5af.jpg"
+        />
+        <img
+          src="https://w0.peakpx.com/wallpaper/40/935/HD-wallpaper-nature-beautiful.jpg"
+        />
+        <img
+          src="https://img.freepik.com/free-photo/photorealistic-moon-with-abstract-landscape_23-2151158665.jpg"
+        />
+        <img
+          src="https://cdn.magicdecor.in/com/2023/09/19171540/Gautam-Buddha-Stone-Textured-Wallpaper.jpg"
+        />
+        <img
+          src="https://cdn.pixabay.com/photo/2024/01/02/14/58/leaf-8483401_640.jpg"
+        />
+        <img
+          src="https://i.pinimg.com/736x/23/66/0e/23660e5fadc23ca84145de1b8cf26493.jpg"
+        />
+        <img
+          src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg"
+        />
+        <img
+          src="https://wallpapers.com/images/hd/wonderful-pink-tree-ee04zkhhkzzqo475.jpg"
+        />
+        <img
+          src="https://aimadeimage.net/wp-content/uploads/2023/11/ai-robot-kissing-girl-wallpaper-3.jpg"
+        />
+        <img
+          src="https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/topics/magazine-article-pool/2024/wallpaper/m-wallpaper/3-0-csl/bmw-3-0-csl-mi-05.jpg.asset.1669308612336.jpg"
+        />
+      </section>
+    </div>
     <hr />
     <a href="index.html">Atras</a>
   </body>
