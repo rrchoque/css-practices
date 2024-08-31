@@ -285,9 +285,9 @@ body.dark .mode .sun-moon i.moon {
   transition: var(--tran-04);
 }
 
-.bx-chevron-right::before {
+/* .bx-chevron-right::before {
   margin-top: 4px;
-}
+} */
 
 body.dark .switch::before {
   left: 20px;
