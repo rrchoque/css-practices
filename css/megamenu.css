@@ -63,9 +63,42 @@ nav .wrapper {
   justify-content: space-between;
 }
 
-.wrapper .logo {
+/* .wrapper .logo {
   color: var(--text-color);
   font-size: 30px;
+  font-weight: 600;
+} */
+
+.wrapper .image-text {
+  color: var(--text-color);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .image-text .image {
+  min-width: 60px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .image-text img {
+  width: 40px;
+  border-radius: 6px;
+}
+
+.wrapper .image-text .logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.wrapper .image-text .name {
+  margin-top: 2px;
+  font-size: 15px;
   font-weight: 600;
 }
 
