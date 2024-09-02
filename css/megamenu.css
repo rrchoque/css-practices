@@ -142,3 +142,29 @@ nav .wrapper {
 .login:hover {
   color: var(--primary-color);
 }
+
+.wrapper .links .dropdown {
+  position: absolute;
+  background-color: var(--sidebar-color);
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.02);
+}
+
+.wrapper .links li:hover .dropdown {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: var(--tran-04);
+}
+
+.wrapper .links .dropdown li a {
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+}
