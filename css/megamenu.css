@@ -138,3 +138,7 @@ nav .wrapper {
   font-size: 25px;
   font-weight: 600;
 }
+
+.login:hover {
+  color: var(--primary-color);
+}
