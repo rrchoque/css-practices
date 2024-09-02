@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  /* ===== Colors ===== */
+  --body-color: #455df61f;
+  --sidebar-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #707070;
+
+  /* ===== Transition ===== */
+  --tran-03: all 0.2s ease;
+  --tran-04: all 0.3s ease;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--body-color);
+  transition: var(--tran-04);
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+body.dark {
+  --body-color: #1a1d1f;
+  --sidebar-color: #000;
+  --primary-color: #3a3b3c;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+}
+
+/* ===== Menú ===== */
+nav {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  background: var(--sidebar-color);
+  transition: var(--tran-04);
+}
+
+nav .wrapper {
+  position: relative;
+  max-width: 1300px;
+  height: 70px;
+  padding: 0px 30px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper .logo {
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.wrapper .links {
+  display: inline-flex;
+}
+
+.wrapper .links li {
+  list-style: none;
+}
+
+.login,
+.links li a {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: var(--tran-03);
+}
