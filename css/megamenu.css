@@ -156,7 +156,8 @@ nav .wrapper {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.wrapper .links li:hover .dropdown {
+.wrapper .links li:hover .dropdown,
+.wrapper .links li:hover .megaMenu {
   top: 70px;
   opacity: 1;
   visibility: visible;
@@ -176,9 +177,9 @@ nav .wrapper {
   left: 0;
   width: 100%;
   padding: 0 30px;
-  /* top: 85px;
+  top: 85px;
   opacity: 0;
-  visibility: hidden; */
+  visibility: hidden;
 }
 
 .megaMenu .content {
