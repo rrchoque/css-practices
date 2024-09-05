@@ -441,3 +441,9 @@ nav .wrapper {
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(20px);
 }
+
+@media (max-width: 450px) {
+  .login label {
+    display: none;
+  }
+}
