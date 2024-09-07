@@ -1,59 +1,50 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+  <!--Created by Tivotal-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio reynaldo.dev - Ingeniero de Sistemas</title>
+    <title>CSS Practicas | ReynaldoDev</title>
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!--css file-->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Portfolio Reynaldo.dev</h1>
-
     <nav>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="https://twitch.tv/midudev" target="_blank">Twitch</a>
+      <div class="wrapper">
+        <!-- <a href="#" class="logo">ReynaldoDev</a> -->
+        <div class="image-text">
+          <span class="image">
+            <img src="image/logo-r.png" alt="logo" />
+          </span>
+
+          <div class="text logo-text">
+            <span class="name">ReynaldoDev</span>
+            <span class="profession">Web Developer</span>
+          </div>
+        </div>
+
+        <ul class="links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Conceptos</a></li>
+          <li><a href="#">Ejemplos</a></li>
+          <li><a href="#">Componentes</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <ul>
-      <li>
-        <a href="color.html">Colores</a>
-      </li>
-      <li>
-        <a href="pseudoclases.html">Pseudoclases</a>
-      </li>
-      <li>
-        <a href="bordes.html">Bordes</a>
-      </li>
-      <li>
-        <a href="operadores.html">Operadores</a>
-      </li>
-      <li>
-        <a href="especificidad.html">Especificidad</a>
-      </li>
-      <li>
-        <a href="espacios.html">Espacios (padding, border y margin)</a>
-      </li>
-      <li>
-        <a href="box.html">Contenido tipo caja</a>
-      </li>
-      <li>
-        <a href="posiciones.html">Posiciones</a>
-      </li>
-      <li>
-        <a href="apilamiento.html">Contexto de apilamiento (z-index)</a>
-      </li>
-      <li>
-        <a href="flex.html">Flex</a>
-      </li>
-      <li>
-        <a href="grid.html">Grid</a>
-      </li>
-      <li>
-        <a href="transiciones.html">Transiciones</a>
-      </li>
-      <li>
-        <a href="animaciones.html">Animaciones</a>
-      </li>
-    </ul>
+    <div class="home">
+      <div class="title">
+        Página principal donde estare organizando mis practicas<br />
+        utilizando HTML y CSS
+      </div>
+    </div>
+    <script src="js/index.js" />
   </body>
 </html>
