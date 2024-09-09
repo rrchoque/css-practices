@@ -2,6 +2,7 @@
 
 * {
   font-family: "Poppins", sans-serif;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,6 +26,7 @@ body {
   min-height: 100vh;
   background-color: var(--body-color);
   transition: var(--tran-04);
+  color: var(--text-color);
 }
 
 body.dark {
@@ -34,4 +36,62 @@ body.dark {
   --primary-color-light: #3a3b3c;
   --toggle-color: #fff;
   --text-color: #ccc;
+}
+
+body nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  background: var(--sidebar-color);
+  transition: var(--tran-04);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+nav .wrapper {
+  display: flex;
+  max-width: 1300px;
+}
+
+/* ===== logo ===== */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo .logo-image {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
+
+.logo .logo-image img {
+  width: 100%;
+  height: auto;
+}
+
+.logo .logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 18px;
+  white-space: nowrap;
+  margin-left: 5px;
+}
+
+.logo .logo-text .name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.logo .logo-text .profession {
+  font-size: 14px;
+}
+
+/* ===== menú ===== */
+.menu {
+  display: flex;
 }
