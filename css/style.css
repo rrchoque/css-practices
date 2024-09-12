@@ -97,6 +97,33 @@ nav .wrapper {
   font-size: 14px;
 }
 
+/* ===== nav-tools ===== */
+
+.nav-tools {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-tools a {
+  color: var(--text-color);
+  background-color: var(--primary-color-light);
+  border-radius: 50%;
+  /* display: inline-block; */
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.nav-tools a:hover .bx {
+  font-weight: 500;
+  background-color: var(--primary-color);
+}
+
 /* ===== menú ===== */
 .menu {
   display: flex;
