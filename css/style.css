@@ -107,18 +107,38 @@ aside {
 
 .nav-tools a {
   color: var(--text-color);
-  background-color: var(--primary-color-light);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  transition: var(--tran-03);
 }
 
-.nav-tools a:hover .bx {
-  font-weight: 600;
+.nav-tools a:hover {
+  background-color: var(--primary-color-light);
+}
+
+.nav-tools a .bx {
+  font-size: 22px;
+}
+
+/* .avatar {
+  border: solid 1px var(--text-color);
+} */
+
+.avatar img {
+  width: 35px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.avatar:hover {
+  border: solid 1px var(--text-color);
+  background-color: var(--primary-color-light);
+  transition: var(--tran-03);
 }
 
 /* ===== menú ===== */
