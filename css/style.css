@@ -125,18 +125,18 @@ aside {
   font-size: 22px;
 }
 
-/* .avatar {
+.avatar {
   border: solid 1px var(--text-color);
-} */
+}
 
 .avatar img {
-  width: 35px;
+  width: 34px;
   height: auto;
   border-radius: 50%;
 }
 
-.avatar:hover {
-  border: solid 1px var(--text-color);
+.nav-tools .avatar:hover {
+  border: solid 1px var(--primary-color);
   background-color: var(--primary-color-light);
   transition: var(--tran-03);
 }
@@ -171,6 +171,40 @@ aside {
 
 .menu a:hover {
   background-color: var(--primary-color-light);
+}
+
+.menu .dropdown {
+  position: absolute;
+  top: 140px;
+  background-color: var(--sidebar-color);
+  border-radius: 8px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  gap: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu ul li:hover .dropdown,
+.menu ul li:hover .megaMenu {
+  top: 110px;
+  opacity: 1;
+  visibility: visible;
+  transition: var(--tran-04);
+}
+
+.dropdown li,
+.dropdown a {
+  width: 100%;
+}
+
+.dropdown a {
+  display: block;
+  border-radius: 0%;
 }
 
 /* ===== body ===== */
