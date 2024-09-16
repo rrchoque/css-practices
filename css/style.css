@@ -123,6 +123,19 @@ aside {
 
 .nav-tools a .bx {
   font-size: 22px;
+  transition: var(--tran-03);
+}
+
+.nav-tools .bx-moon {
+  display: none;
+}
+
+body.dark .nav-tools .bx-sun {
+  display: none;
+}
+
+body.dark .nav-tools .bx-moon {
+  display: block;
 }
 
 .avatar {
