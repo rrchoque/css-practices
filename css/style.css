@@ -220,6 +220,51 @@ body.dark .nav-tools .bx-moon {
   border-radius: 0%;
 }
 
+@media (max-width: 768px) {
+  aside {
+    position: absolute;
+    width: 100%;
+    max-width: 350px;
+    height: calc(100vh - 60px);
+  }
+
+  .menu {
+    height: 100%;
+    justify-content: left;
+    align-items: normal;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: normal;
+    justify-content: left;
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+  }
+
+  .menu .dropdown {
+    position: inherit;
+    box-shadow: none;
+    display: none;
+    padding-left: 30px;
+    border-radius: 0%;
+  }
+
+  .menu .dropdown li a {
+    border-radius: 5px;
+  }
+
+  .menu ul li:hover .dropdown,
+  .menu ul li:hover .megaMenu {
+    display: block;
+    transition: var(--tran-04);
+  }
+}
+
 /* ===== body ===== */
 
 .body {
