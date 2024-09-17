@@ -220,6 +220,21 @@ body.dark .nav-tools .bx-moon {
   border-radius: 0%;
 }
 
+.menu .menu-link {
+  display: flex;
+}
+.menu-link .menu-name {
+  display: flex;
+}
+
+.menu-link .menu-icon {
+  padding-right: 12px;
+}
+
+.menu-link .menu-arrow {
+  padding-left: 10px;
+}
+
 @media (max-width: 768px) {
   aside {
     position: absolute;
@@ -262,6 +277,11 @@ body.dark .nav-tools .bx-moon {
   .menu ul li:hover .megaMenu {
     display: block;
     transition: var(--tran-04);
+  }
+
+  .menu .menu-link {
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
