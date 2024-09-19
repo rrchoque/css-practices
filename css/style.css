@@ -277,9 +277,11 @@ body.dark .nav-tools .bx-moon {
     border-radius: 5px;
   }
 
-  .menu ul li:hover .dropdown,
-  .menu ul li:hover .megaMenu {
+  .menu .open + .dropdown,
+  .menu .open + .megaMenu {
     display: block;
+    opacity: 1;
+    visibility: visible;
     transition: var(--tran-04);
   }
 
