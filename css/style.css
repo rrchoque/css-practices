@@ -269,12 +269,13 @@ body.dark .nav-tools .bx-moon {
     position: inherit;
     box-shadow: none;
     display: none;
-    padding-left: 30px;
+    /* padding-left: 30px; */
     border-radius: 0%;
   }
 
   .menu .dropdown li a {
     border-radius: 5px;
+    padding-left: 30px;
   }
 
   .menu .open + .dropdown,
