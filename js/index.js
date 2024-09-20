@@ -1,15 +1,26 @@
 const body = document.querySelector("body"),
   modeSwitch = body.querySelector(".mode-switch"),
-  menuItems = body.querySelectorAll(".menu-link");
+  menu = body.querySelector("aside"),
+  menuItems = menu.querySelectorAll(".menu-link"),
+  menuToggle = body.querySelector(".menu-toggle");
 
 modeSwitch.addEventListener("click", () => {
   body.classList.toggle("dark");
   console.log("dark");
 });
 
-// menuItems.addEventListener("click", () => {
-//   menuItems.classList.toggle("open");
-// });
+menuToggle.addEventListener("click", () => {
+  const isOpen = menuToggle.classList.contains("open");
+
+  if (isOpen) {
+    menuToggle.classList.remove('open')
+    menu.classList.remove('open')
+  } else {
+    menuToggle.classList.add('open')
+    menu.classList.add('open')
+  }
+
+});
 
 //const menuItems = document.querySelectorAll('.menu-item'); // Selecciona todos los elementos del menú
 

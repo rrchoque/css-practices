@@ -271,6 +271,7 @@ body.dark .nav-tools .bx-moon {
   .menu a {
     display: block;
     width: 100%;
+    cursor: pointer;
   }
 
   .menu .dropdown {
@@ -306,6 +307,7 @@ body.dark .nav-tools .bx-moon {
     justify-content: center;
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
 
   .menu-toggle i {
@@ -321,6 +323,23 @@ body.dark .nav-tools .bx-moon {
 
   .menu-toggle .bx-x {
     display: none;
+  }
+
+  .menu-toggle.open .bx-x {
+    display: block;
+  }
+
+  .menu-toggle.open .bx-menu {
+    display: none;
+  }
+
+  aside{
+    display: none;
+  }
+
+  aside.open{
+    display: block;
+    transition: var(--tran-04);
   }
 }
 
