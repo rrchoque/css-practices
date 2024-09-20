@@ -239,6 +239,10 @@ body.dark .nav-tools .bx-moon {
   border-radius: 0%;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
   aside {
     position: absolute;
@@ -288,6 +292,30 @@ body.dark .nav-tools .bx-moon {
   .menu .menu-link {
     justify-content: space-between;
     width: 100%;
+  }
+
+  /* ===== menu toogle ===== */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-toggle i {
+    font-size: 22px;
+    color: var(--text-color);
+    transition: var(--tran-04);
+  }
+
+  .menu-toggle:hover {
+    background-color: var(--primary-color-light);
+    border-radius: 8px;
+  }
+
+  .menu-toggle .bx-x {
+    display: none;
   }
 }
 
