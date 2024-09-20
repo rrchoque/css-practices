@@ -243,6 +243,10 @@ body.dark .nav-tools .bx-moon {
   display: none;
 }
 
+.wrapper-logo {
+  display: flex;
+}
+
 @media (max-width: 768px) {
   aside {
     position: absolute;
@@ -273,12 +277,13 @@ body.dark .nav-tools .bx-moon {
     position: inherit;
     box-shadow: none;
     display: none;
-    padding-left: 30px;
+    /* padding-left: 30px; */
     border-radius: 0%;
   }
 
   .menu .dropdown li a {
     border-radius: 5px;
+    padding-left: 30px;
   }
 
   .menu .open + .dropdown,
@@ -315,6 +320,12 @@ body.dark .nav-tools .bx-moon {
   }
 
   .menu-toggle .bx-x {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .logo {
     display: none;
   }
 }
