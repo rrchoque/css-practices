@@ -330,6 +330,14 @@ body.dark .nav-tools .bx-moon {
   }
 }
 
+
+
+@media (max-width: 460px) {
+  .logo .logo-text {
+    display: none;
+  }
+}
+
 /* ===== body ===== */
 
 .body {
