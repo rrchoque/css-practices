@@ -333,12 +333,12 @@ body.dark .nav-tools .bx-moon {
     display: none;
   }
 
-  aside{
-    display: none;
+  aside {
+    left: -100%;
   }
 
-  aside.open{
-    display: block;
+  aside.open {
+    left: 0%;
     transition: var(--tran-04);
   }
 }
